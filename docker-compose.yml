@@ -1,0 +1,37 @@
+version: '2'
+services:
+  tinder-app:
+    build: .
+    container_name: tinder-app
+    command: bash start.sh
+    environment:
+      RAILS_ENV: development
+      APP_DB_HOST: db_tinder
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: root
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db_tinder
+    links:
+      - db_tinder
+    networks:
+      - tinder
+
+  db_tinder:
+    container_name: db_tinder
+    image: postgres:11.1
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/docker-entrypoint
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: root
+    networks:
+      - tinder
+
+networks:
+  tinder:

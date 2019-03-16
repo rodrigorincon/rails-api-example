@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV.fetch("APP_DB_HOST") { 'localhost' } %>
+  username: <%= ENV.fetch("POSTGRES_USER") { '' } %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { '' } %>
+  port: 5432
+
+development:
+  <<: *default
+  database: pseudo-tinder_development
+
+test:
+  <<: *default
+  database: pseudo-tinder_test
+
+production:
+  <<: *default
+  database: pseudo-tinder_production
+  username: pseudo-tinder
+  password: <%= ENV['PSEUDO-TINDER_DATABASE_PASSWORD'] %>

@@ -24,6 +24,9 @@ gem 'active_model_serializers', '~> 0.10.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Minimal authorization through OO design and pure Ruby classes 
+gem "pundit", '2.0.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

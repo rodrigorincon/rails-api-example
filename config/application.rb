@@ -22,6 +22,13 @@ module PseudoTinder
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+     # Locale 
+     config.i18n.default_locale = 'pt-BR' 
+     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')] 
+  
+     # Controllers 
+     config.action_controller.action_on_unpermitted_parameters = :raise 
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

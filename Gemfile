@@ -26,6 +26,8 @@ gem 'active_model_serializers', '~> 0.10.2'
 
 # Minimal authorization through OO design and pure Ruby classes 
 gem "pundit", '2.0.0'
+# Explicit soft deletion for ActiveRecord via deleted_at and default scope 
+gem 'soft_deletion', '1.3.1' 
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

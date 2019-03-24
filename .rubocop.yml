@@ -1,0 +1,39 @@
+AllCops:
+  Include:
+    - app
+    - Rakefile
+    - config.ru
+    - config
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'doc/**/*'
+    - 'log/**/*'
+    - 'script/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'lib/tasks/bbsim.rake'
+Style/ExtraSpacing:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 90
+Metrics/MethodLength:
+  CountComments: false
+  Max: 10
+Metrics/BlockLength:
+  CountComments: false
+  Max: 25
+Metrics/ClassLength:
+  CountComments: false
+  Max: 100
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 100
+Metrics/CyclomaticComplexity:
+  Max: 6
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: true
